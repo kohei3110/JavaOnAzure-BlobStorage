@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title>Insert title here</title>
+</head>
+<body>
+    サーバーに一度保存したのちアップロード
+    <form method="post" enctype="multipart/form-data" th:action="@{/upload}">
+        <input name="multipartFile" type="file" />
+        <input id="data_upload_form" type="submit" />
+    </form>
+
+    <br>
+
+    ストリームアップロード
+    <form method="post" enctype="multipart/form-data" th:action="@{/uploadstream}">
+        <input name="multipartFile" type="file" />
+        <input id="data_uploadstream_form" type="submit" />
+    </form>
+
+    <br>
+
+    App Service Plan の一時ディレクトリに保存後、定時にアップロードジョブを実行
+    <form method="post" enctype="multipart/form-data" th:action="@{/uploadschedule}">
+        <input name="multipartFile" type="file" />
+        <input id="data_uploadschedule_form" type="submit" />
+    </form>
+
+    <br>
+
+    SAS をもらってアップロード
+    <form method="get" enctype="multipart/form-data" th:action="@{/sas}">
+        <input name="multipartFile" type="file" />
+        <input id="data_uploadsas_form" type="submit" />
+    </form>
+
+</body>
+</html>
